@@ -43,6 +43,9 @@ names(basic)[[8]] <- "MaxIOPS"
 # 各列の型を変更
 # basic$SizePortal <- factor(basic$SizePortal, levels = c("A0", "A1", "A2", "A3", "A4"))
 
+# MaxIOPS 列の文字列を整形
+basic$MaxIOPS <- str_replace(string = basic$MaxIOPS, pattern = "x", replacement = " x ")
+
 # 不要な中間 Data を削除
 rm(basic_disk, basic_size)
 
@@ -99,6 +102,10 @@ names(standard)[[3]] <- "CPUCore"
 names(standard)[[4]] <- "Memory"
 names(standard)[[5]] <- "MaxDataDiskSize"
 names(standard)[[9]] <- "MaxIOPS"
+
+# MaxIOPS 列の文字列を整形
+standard$MaxIOPS <- str_replace(string = standard$MaxIOPS, pattern = "x", replacement = " x ")
+standard$MaxIOPS <- str_replace(string = standard$MaxIOPS, pattern = "X", replacement = " x ")
 
 # 不要な中間 Data を削除
 rm(standard_disk, standard_size)
