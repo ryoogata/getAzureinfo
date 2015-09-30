@@ -198,8 +198,6 @@ standard_g_disk$MaxTempDiskSize <- str_replace(string= standard_g_disk$MaxTempDi
 
 # VM の Disk の種別 ( 全て SSD ) を記載する列を追加して整形
 standard_g_disk$LocalDisk <- "SSD"
-standard_g_disk <- standard_g_disk[,c(2,3,4)]
-names(standard_g_disk)[1:2] <- c("MaxOSDiskSize", "MaxTempDiskSize")
 
 # VM の Memory に関する情報を整形
 standard_g[,3] <- as.character(standard_g[,3])
